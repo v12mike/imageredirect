@@ -1,0 +1,26 @@
+services:
+    v12mike.imageredirect.functions:
+        class: v12mike\imageredirect\core\imageredirect
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@cache'
+            - '@content.visibility'
+            - '@dbal.conn'
+            - '@dispatcher'
+            - '@template'
+            - '@user'
+            - %core.root_path%
+            - %core.php_ext%
+    v12mike.imageredirect.listener:
+        class: v12mike\imageredirect\event\listener
+        arguments:
+            - '@config'
+            - '@dbal.conn'
+            - %core.table_prefix%
+            - '@auth'
+            - '@user'
+        tags:
+            - { name: event.listener }
+
+
