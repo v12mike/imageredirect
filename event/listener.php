@@ -59,7 +59,7 @@ class listener implements EventSubscriberInterface
 					}
 					
 					// skip unless proxy mode enabled
-					if ($this->config['imageredirect_enabled'] == 0) 
+					if ($this->config['imageredirect_proxymode'] == 0) 
 						continue;
 					
 					foreach ($domains as $row)
