@@ -20,7 +20,7 @@ class imageredirect_info
 		return array(
 			'filename'	=> 'v12mike/imageredirect/acp/imageredirect_module',
 			'title'		=> 'Image Redirect',
-			'version'	=> '1.0.1',
+			'version'	=> '1.0.3',
 			'modes'		=> array(
 				'local_image_store'	=> array(
 					'title' => 'IR_LOCAL_STORE_CONFIG',
@@ -28,10 +28,6 @@ class imageredirect_info
 					'cat'	=> array('IR_EXT')),
 				'image_proxy'	=> array(
 					'title' => 'IR_PROXY_CONFIG',
-					'auth' => 'ext_v12mike/imageredirect && acl_a_board',
-					'cat'	=> array('IR_EXT')),
-				'image_link_locations'	=> array(
-					'title' => 'IR_LOCATIONS_CONFIG',
 					'auth' => 'ext_v12mike/imageredirect && acl_a_board',
 					'cat'	=> array('IR_EXT')),
 			),

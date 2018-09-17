@@ -55,8 +55,6 @@
 		{L_IR_DISABLED} &nbsp;
 		<input type="radio" class="radio" name="imageredirect_proxymode" value="1" <!-- IF PROXY_MODE == 1 --> checked="checked"<!-- ENDIF -->/>
 		{L_IR_ENABLED} &nbsp;
-		<input type="radio" class="radio" name="imageredirect_proxymode" value="2" <!-- IF PROXY_MODE == 2 --> checked="checked"<!-- ENDIF --> />
-		{L_IR_TRAINING_MODE}</dd>
 	</dl>
 	<dl>
 		<dt>
@@ -94,78 +92,6 @@
 	<br />
 
 	<p>{L_IR_ADD_DOMAIN_EXPLAIN}</p>
-	<table cellspacing="1">
-		<thead>
-		<tr>
-			<th>{L_IR_DOMAIN}</th><th>{L_IR_SUBDOMAINS}</th><th>{L_IR_ACTION}</th>
-		</tr>
-		</thead>
-		<tbody>
-		<!-- BEGIN directurlrewrites -->
-		<!-- IF directurlrewrites.S_ROW_COUNT is even --><tr class="row1"><!-- ELSE --><tr class="row2"><!-- ENDIF --><td>{directurlrewrites.DOMAIN}</td>
-			<!-- IF directurlrewrites.SUBDOMAINS == 0 -->
-			<td>{L_IR_SUBDOMAINS_DISABLED}</td><!-- ELSE -->
-			<td>{L_IR_SUBDOMAINS_ENABLED}</td><!-- ENDIF -->
-			<td align="center">
-				<input type="submit" name="delete_domain_[{directurlrewrites.DOMAIN_ID}]" value="{L_IR_DELETE_DOMAIN}" class="button2"/>
-			</td>
-		</tr>
-		<!-- END directurlrewrites -->
-		<!-- IF directurlrewrites.S_ROW_COUNT is even -->
-		<tr class="row1"><!-- ELSE --><tr class="row2"><!-- ENDIF -->
-			<td><input type="text" name="imageredirect_adddomain" id="imageredirect_adddomain" size="50" value="{ADD_DOMAIN}" /></td>
-			<td>
-				<input type="radio" class="radio" name="imageredirect_subdomains" value="1" checked="checked"/>
-				{L_IR_SUBDOMAINS_ENABLED} &nbsp;
-				<input type="radio" class="radio" name="imageredirect_subdomains" value="0" />
-				{L_IR_SUBDOMAINS_DISABLED}</td>
-			<td><input class="button2" type="submit" name="add_domain" value="{L_IR_ADD_DOMAIN}" /></td>
-		</tr>
-		</tbody>
-	</table>
-	<!-- ENDIF -->
-	<!-- IF MODE == 3 -->
-<h2>{L_IR_LOCATIONS_CONFIG}</h2>
-	<p>{L_IR_ADD_LOCATION_EXPLAIN}</p>
-	<table cellspacing="1">
-		<thead>
-		<tr>
-			<th>{L_IR_STRUCTURE}</th><th>{L_IR_FIELD}</th><th>{L_IR_LOCATION_COMMENT}</th><th>{L_STATE}</th><th>{L_IR_ACTION}</th><th>{L_DELETE}</th>
-		</tr>
-		</thead>
-		<tbody>
-		<!-- BEGIN image_link_locations -->
-		<!-- IF image_link_locations.S_ROW_COUNT is even -->
-		<tr class="row1"><!-- ELSE --><tr class="row2"><!-- ENDIF -->
-			<td>{image_link_locations.LOCATION}</td>
-			<td>{image_link_locations.FIELD}</td>
-			<td>{image_link_locations.COMMENT}</td>
-			<!-- IF image_link_locations.TYPE == 0 --><td>{L_DISABLED}</td><!-- ELSE --><td>{L_ENABLED}</td><!-- ENDIF -->
-			<!-- IF image_link_locations.TYPE <> 1 -->
-				<!-- IF image_link_locations.TYPE == 0 -->
-				<td align="center">
-					<input type="submit" name="enable_location_[{image_link_locations.LOCATION_ID}]" value="{L_IR_ENABLE}" class="button2"/>
-				</td><!-- ENDIF -->
-				<!-- IF image_link_locations.TYPE == 2 -->
-				<td align="center">
-					<input type="submit" name="disable_location_[{image_link_locations.LOCATION_ID}]" value="{L_IR_DISABLE}" class="button2"/>
-				</td><!-- ENDIF -->
-			<td align="center">
-				<input type="submit" name="delete_location_[{image_link_locations.LOCATION_ID}]" value="{L_IR_DELETE_LOCATION}" class="button2"/>
-			</td>
-			<!-- ENDIF -->
-		</tr>
-		<!-- END image_link_locations -->
-		<!-- IF image_link_locations.S_ROW_COUNT is even -->
-		<tr class="row1"><!-- ELSE --><tr class="row2"><!-- ENDIF -->
-			<td><input type="text" name="imageredirect_addlocation" id="imageredirect_addlocation" size="50" value="{IR_ADD_LOCATION}" /></td>
-			<td><input type="text" name="imageredirect_addfield" id="imageredirect_addfield" size="50" value="{IR_ADD_FIELD}" /></td>
-			<td><input type="text" name="imageredirect_addcomment" id="imageredirect_addcomment" size="50" value="{IR_ADD_COMMENT}" /></td>
-			<td><input class="button2" type="submit" name="add_location" value="{L_IR_ADD_LOCATION}"></td>
-		</tr>
-		</tbody>
-	</table>
-	<br />
 	<!-- ENDIF -->
 {S_FORM_TOKEN}
 </form>
