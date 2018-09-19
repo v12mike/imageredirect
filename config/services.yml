@@ -6,4 +6,3 @@ services:
         tags:
             - { name: event.listener }
 
-

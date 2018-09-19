@@ -3,7 +3,7 @@
 This is the repository for the Image Redirect Extension.for phpBB
 
 ## Quick Install
-You can install this on phpBB 3.1/3.2 by following the steps below:
+You can install this on phpBB 3.2.x by following the steps below:
 
 1. In the `ext` directory of your phpBB board, create a new directory named `v12mike` (if it does not already exist) and navigate to it
 2. `git clone https://github.com/v12mike/imageredirect.git (the extension tree should now be under ext/v12mike/imageredirect)
@@ -19,7 +19,6 @@ You can install this on phpBB 3.1/3.2 by following the steps below:
  * Navigate in the ACP to 'Extensions -> Image Redirect -> Proxy Settings'.
  * Enter the proxy address (without protocol specifier or trailing /) e.g. mydomain.com/camo
  * Enter the camo API key (if using a camo server) 
- * Add at least your sites domain(s) to the Directly Mapped Domains list (without protocol specifier or trailing /) e.g. mydomain.com
  * Select 'Camo Mode' or 'Simple Mode' and that 'Image Proxy Enable' is selected.
 
 ## Support
@@ -29,6 +28,3 @@ You can install this on phpBB 3.1/3.2 by following the steps below:
 ## License
 [GNU General Public License v2](http://opensource.org/licenses/GPL-2.0)
 
-## Todo
-
-* Add ability to automatically harvest external images

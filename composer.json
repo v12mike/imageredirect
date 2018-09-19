@@ -3,8 +3,8 @@
 	"type": "phpbb-extension",
 	"description": "Rewrites image URLs to point to a local file or proxy server.",
 	"homepage": "https://ingenious.co.nz/imageredirect/",
-	"version": "1.0.3",
-	"time": "2018-09-17 12:00:00",
+	"version": "2.0.0-b1",
+	"time": "2018-09-18 12:00:00",
 	"license": "GPL-2.0",
 	"authors": [
 		{
