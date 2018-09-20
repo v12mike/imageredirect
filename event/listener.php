@@ -10,8 +10,6 @@ namespace v12mike\imageredirect\event;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-//$phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : './';
-
 class listener implements EventSubscriberInterface
 {
 	public function __construct(\phpbb\config\config $config)
@@ -36,10 +34,8 @@ class listener implements EventSubscriberInterface
 
 			// if we have a locally hosted copy of the file, we can find it
 			$local_file_name = md5("$url");
-		//	$tmp2 = realpath($phpbb_root_path);
-		//	$phpbb_root_path2 = '/var/webs/forums/fcf/forum/';
 			$file_path = $phpbb_root_path . $this->config['imageredirect_localimagespath'] . $local_file_name;
-		//	$tmp = file_exists($file_path);
+
 			if (file_exists($file_path))
 			{
 				// we will link to the local file
