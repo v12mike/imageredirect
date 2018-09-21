@@ -2,7 +2,7 @@
 /**
 *
 * @package imageredirect
-* @copyright (c) 2017-2018 v12Mike
+* @copyright (c) 2017 - 2018 v12Mike
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
@@ -13,11 +13,6 @@ class imageredirect_module
 {
 	/** @var string */
 	var $u_action;
-	/** @var array */
-	private static $language_mode = array(
-		'local_image_store',
-		'image_proxy',
-	);
 
 	/**
 	 * @param string $id
@@ -36,7 +31,7 @@ class imageredirect_module
 
 		switch ($mode)
 		{
-			case 'local_image_store':
+			case 'local_image_store':				
 				{
 					if ($request->is_set_post('submit'))
 					{
@@ -52,9 +47,9 @@ class imageredirect_module
 				// fill-in the template
 				$template->assign_vars(array(
 					'MODE'				=> 1,
-					'LOCAL_IMAGES_MODE'	=> $this->config['imageredirect_localimagesmode'],
-					'LOCAL_IMAGES_PATH'	=> (!empty($this->config['imageredirect_localimagespath'])) ? $this->config['imageredirect_localimagespath'] : "",
-					'IR_VERSION'		=> $this->config['imageredirect_version'],
+					'LOCAL_IMAGES_MODE'	=> $config['imageredirect_localimagesmode'],
+					'LOCAL_IMAGES_PATH'	=> (!empty($config['imageredirect_localimagespath'])) ? $config['imageredirect_localimagespath'] : "",
+					'IR_VERSION'		=> $config['imageredirect_version'],
 					'U_ACTION'			=> $this->u_action,
 				));
 				break;
@@ -82,11 +77,11 @@ class imageredirect_module
 			// fill-in the template
 			$template->assign_vars(array(
 				'MODE'				=> 2,
-				'PROXY_MODE'		=> $this->config['imageredirect_proxymode'],
-				'SIMPLE_MODE'		=> (!empty($this->config['imageredirect_simplemode'])) ? true : false,
-				'PROXY_ADDRESS'		=> (!empty($this->config['imageredirect_proxyaddress'])) ? $this->config['imageredirect_proxyaddress'] : "",
-				'PROXY_API_KEY'		=> (!empty($this->config['imageredirect_proxyapikey'])) ? $this->config['imageredirect_proxyapikey'] : "",
-				'IR_VERSION'		=> $this->config['imageredirect_version'],
+				'PROXY_MODE'		=> $config['imageredirect_proxymode'],
+				'SIMPLE_MODE'		=> (!empty($config['imageredirect_simplemode'])) ? true : false,
+				'PROXY_ADDRESS'		=> (!empty($config['imageredirect_proxyaddress'])) ? $config['imageredirect_proxyaddress'] : "",
+				'PROXY_API_KEY'		=> (!empty($config['imageredirect_proxyapikey'])) ? $config['imageredirect_proxyapikey'] : "",
+				'IR_VERSION'		=> $config['imageredirect_version'],
 				'IR_ERROR'	        => isset($error) ? ((sizeof($error)) ? implode('<br />', $error) : '') : '',
 				'U_ACTION'			=> $this->u_action,
 			));

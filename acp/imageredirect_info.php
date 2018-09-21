@@ -31,7 +31,7 @@ class imageredirect_info
 					'auth' => 'ext_v12mike/imageredirect && acl_a_board',
 					'cat'	=> array('IR_EXT')),
 				/* although not used in v2.0, 'image_link_locations' must be present here so that the migrator can delete it! */
-				'image_link_locations'	=> array( 
+				'image_link_locations'	=> array(
 					'title' => 'IR_LOCATIONS_CONFIG',
 					'auth' => 'ext_v12mike/imageredirect && acl_a_board',
 					'cat'	=> array('IR_EXT')),
