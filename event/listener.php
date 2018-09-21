@@ -45,7 +45,7 @@ class listener implements EventSubscriberInterface
 
 			// if we have a locally hosted copy of the file, we can find it
 			$local_file_name = $this->config['imageredirect_localimagespath'] . md5("$url");
-			$file_path = $board_path . $local_file_name;
+			$file_path = $board_path . '/' . $local_file_name;
 			if (file_exists($file_path))
 			{
 				// we will link to the local file
