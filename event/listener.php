@@ -30,16 +30,26 @@ class listener implements EventSubscriberInterface
 		// maybe we want to serve a local copy of the image?
 		if ($this->config['imageredirect_localimagesmode'] > 0)
 		{
-			global $phpbb_root_path;
+			// for efficiency on pages with many [IMG] links, keep static copies of calculatedstrings that don't change 
+			static $board_url = '';
+			if ($board_url === '')
+			{
+				$board_url = generate_board_url();
+			}
+
+			static $board_path = '';
+			if ($board_path === '')
+			{
+				$board_path = realpath('./');
+			}
 
 			// if we have a locally hosted copy of the file, we can find it
-			$local_file_name = md5("$url");
-			$file_path = $phpbb_root_path . $this->config['imageredirect_localimagespath'] . $local_file_name;
-
+			$local_file_name = $this->config['imageredirect_localimagespath'] . md5("$url");
+			$file_path = $board_path . $local_file_name;
 			if (file_exists($file_path))
 			{
 				// we will link to the local file
-				$url = generate_board_url() . '/' . $this->config['imageredirect_localimagespath'] . $local_file_name;
+				$url = $board_url . '/' . $local_file_name;
 				return $url;
 			}
 			// drop through to proxy mode
