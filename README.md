@@ -6,7 +6,7 @@ This is the repository for the Image Redirect Extension.for phpBB
 You can install this on phpBB 3.2.x by following the steps below:
 
 1. In the `ext` directory of your phpBB board, create a new directory named `v12mike` (if it does not already exist) and navigate to it
-2. `git clone https://github.com/v12mike/imageredirect.git (the extension tree should now be under ext/v12mike/imageredirect)
+2. `git clone https://github.com/v12mike/imageredirect.git (the extension tree must now be under ext/v12mike/imageredirect)
 3. Navigate in the ACP to `Customise -> Manage extensions`.
 4. Look for `Image Redirect` under the phpBB Disabled Extensions list, and click its `Enable` link.
 5. To use the (optional) local hosting of external images feature
@@ -21,6 +21,13 @@ You can install this on phpBB 3.2.x by following the steps below:
  * Enter the camo API key (if using a camo server) 
  * Select 'Camo Mode' or 'Simple Mode' and that 'Image Proxy Enable' is selected.
 
+## Upgrading from v1.0.x
+ * This version is NOT compatible with phpBB v3.1.x
+ * Disable the v1.0.x extension before deleting the extension files
+ * Delete all of the files in the 'ext/v12mike/imageredirect' directory
+ * Copy all of the v2.0.0 files into their respective directories under 'ext/v12mike/imageredirect'
+ * Enable the Image Redirect extension in the ACP.  The settings should not need to be adjusted.
+ 
 ## Support
 
 * Report bugs and other issues via github.
