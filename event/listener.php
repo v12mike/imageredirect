@@ -101,7 +101,7 @@ class listener implements EventSubscriberInterface
 	{
 		$matches = array();
 		preg_match('#src="(http(s?)://[^"]+)"#', $event['html'], $matches);
-		if (strlen($matches[1]))
+		if (isset($matches[1]))
 		{
 			$new_url = $this->adjust_img_src_url($matches[1]);
 			$event['html'] = str_replace($matches[1], $new_url, $event['html']);
