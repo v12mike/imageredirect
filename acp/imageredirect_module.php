@@ -31,7 +31,7 @@ class imageredirect_module
 
 		switch ($mode)
 		{
-			case 'local_image_store':				
+			case 'local_image_store':
 				{
 					if ($request->is_set_post('submit'))
 					{
@@ -40,8 +40,8 @@ class imageredirect_module
 							trigger_error('FORM_INVALID');
 						}
 
-						$config->set('imageredirect_localimagesmode',      	$request->variable('imageredirect_localimagesmode', 0));
-						$config->set('imageredirect_localimagespath',  $request->variable('imageredirect_localimagespath', "", true));
+						$config->set('imageredirect_localimagesmode', $request->variable('imageredirect_localimagesmode', 0));
+						$config->set('imageredirect_localimagespath', $request->variable('imageredirect_localimagespath', "", true));
 					}
 
 				// fill-in the template
@@ -68,10 +68,10 @@ class imageredirect_module
 						include($phpbb_root_path . 'includes/functions_user.' . $phpEx);
 					}
 
-					$config->set('imageredirect_proxymode',     $request->variable('imageredirect_proxymode', 0));
+					$config->set('imageredirect_proxymode', 	$request->variable('imageredirect_proxymode', 0));
 					$config->set('imageredirect_simplemode',	$request->variable('imageredirect_simplemode', 0));
-					$config->set('imageredirect_proxyaddress',  $request->variable('imageredirect_proxyaddress', "", true));
-					$config->set('imageredirect_proxyapikey', 	$request->variable('imageredirect_proxyapikey', "", true));
+					$config->set('imageredirect_proxyaddress',	$request->variable('imageredirect_proxyaddress', "", true));
+					$config->set('imageredirect_proxyapikey',	$request->variable('imageredirect_proxyapikey', "", true));
 				}
 
 			// fill-in the template
@@ -82,7 +82,7 @@ class imageredirect_module
 				'PROXY_ADDRESS'		=> (!empty($config['imageredirect_proxyaddress'])) ? $config['imageredirect_proxyaddress'] : "",
 				'PROXY_API_KEY'		=> (!empty($config['imageredirect_proxyapikey'])) ? $config['imageredirect_proxyapikey'] : "",
 				'IR_VERSION'		=> $config['imageredirect_version'],
-				'IR_ERROR'	        => isset($error) ? ((sizeof($error)) ? implode('<br />', $error) : '') : '',
+				'IR_ERROR'  		=> isset($error) ? ((sizeof($error)) ? implode('<br />', $error) : '') : '',
 				'U_ACTION'			=> $this->u_action,
 			));
 			break;
@@ -90,3 +90,4 @@ class imageredirect_module
 		}
 	}
 }
+

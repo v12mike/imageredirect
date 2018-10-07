@@ -1,8 +1,8 @@
 {
 	"name": "v12mike/imageredirect",
 	"type": "phpbb-extension",
-	"description": "Rewrites image URLs to point to a local file or proxy server.",
-	"homepage": "https://ingenious.co.nz/imageredirect/",
+	"description": "Rewrites extenal image URLs to point to a local file or proxy server.",
+	"homepage": "https://www.phpbb.com/community/viewtopic.php?f=456&t=2487136",
 	"version": "2.0.0-b2",
 	"time": "2018-10-06 12:00:00",
 	"license": "GPL-2.0",

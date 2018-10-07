@@ -38,7 +38,6 @@ $lang = array_merge($lang, array(
 	'IR_SIMPLE_MODE'				=> 'Simple Mode',
 	'IR_SIMPLE_MODE_EXPLAIN'		=> 'Allows an alternate mode using a commercial proxy service',
 	'IR_PROXY_API_KEY'				=> 'Camo Proxy API Key',
-	'IR_ACTION'						=> 'Action',
 	'IR_ENABLED_EXPLAIN'	  	  	=> 'Allows the extension to be disabled while the configuration page is still available',
 	'IR_PROXY_ADDRESS'	   	 		=> 'Address of the image proxy server',
 	'IR_PROXY_ADDRESS_EXPLAIN' 		=> 'No protocol specifier or trailing / (e.g.: my_site/camo)',

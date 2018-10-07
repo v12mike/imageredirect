@@ -23,3 +23,4 @@ class ext extends \phpbb\extension\base
 		return version_compare($config['version'], '3.2.0', '>=') && version_compare($config['version'], '3.3.0', '<');
 	}
 }
+

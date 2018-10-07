@@ -60,7 +60,7 @@ class release_1_0_0 extends \phpbb\db\migration\migration
 						'comment'		=> array('VCHAR:255', ''),
 						'type'			=> array('UINT:8', 0),
 					),
-					'PRIMARY_KEY'    => 'location_id',
+					'PRIMARY_KEY'		=> 'location_id',
 				),
 			),
 		);
