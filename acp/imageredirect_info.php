@@ -3,7 +3,7 @@
 /**
 *
 * @package Image Redirect
-* @copyright (c) 2016 v12Mike
+* @copyright (c) 2016 - 2018 v12mike
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
