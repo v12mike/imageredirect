@@ -5,7 +5,7 @@
 	"homepage": "https://www.phpbb.com/community/viewtopic.php?f=456&t=2487136",
 	"version": "2.0.0-rc1",
 	"time": "2018-10-07 12:00:00",
-	"license": "GPL-2.0",
+	"license": "GPL-2.0-only",
 	"authors": [
 		{
 			"name": "Mike Morrin",
