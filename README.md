@@ -1,6 +1,7 @@
 # Image Redirect Extension
 
-This is the repository for the Image Redirect Extension.for phpBB
+This is the Image Redirect Extension.for phpBB.
+It rewrites the links for externally hosted images to point to a local image cache and/or a secure proxy (camo) server.
 
 ## Quick Install
 You can install this on phpBB 3.2.x by following the steps below:
