@@ -50,13 +50,16 @@ class listener implements EventSubscriberInterface
             // get the file extension
             $matches = array();
             preg_match('/https?\:\/\/[^\/]+\/+[\w\/\.\+\-\~\%\,]+(\.[\w\/\+\-\~\%\,]+)/',  $url, $matches);	
-            $file_ext = $matches[1];
-            // look first for a file with the extension
-			if (file_exists($file_path . $file_ext))
+			if (isset ($matches[1]))
 			{
-				// we will link to the local file
-				$url = $board_url . '/' . $local_file_name . $file_ext;
-				return $url;
+				$file_ext = $matches[1];
+				// look first for a file with the extension
+				if (file_exists($file_path . $file_ext))
+				{
+					// we will link to the local file
+					$url = $board_url . '/' . $local_file_name . $file_ext;
+					return $url;
+				}
 			}
             // fallback to file without extension (for backward compatibility)
 			elseif (file_exists($file_path))
