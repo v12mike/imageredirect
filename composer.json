@@ -20,7 +20,7 @@
 	"extra": {
 		"display-name": "Image Redirect",
 		"soft-require": {
-			"phpbb/phpbb": ">=3.2.0,<3.3.0@dev"
+			"phpbb/phpbb": ">=3.2.0,<3.4.0@dev"
 		},
 		"version-check": {
 			"host": "frenchcarforum.co.uk",
