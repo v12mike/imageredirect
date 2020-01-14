@@ -3,7 +3,7 @@
 /**
 *
 * @package Image Redirect
-* @copyright (c) 2016 - 2018 v12mike
+* @copyright (c) 2016-2020 v12Mike
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
@@ -20,7 +20,7 @@ class imageredirect_info
 		return array(
 			'filename'	=> 'v12mike/imageredirect/acp/imageredirect_module',
 			'title'		=> 'Image Redirect',
-			'version'	=> '2.0.0-rc1',
+			'version'	=> '2.0.0-rc3',
 			'modes'		=> array(
 				'local_image_store'	=> array(
 					'title' => 'IR_LOCAL_STORE_CONFIG',
