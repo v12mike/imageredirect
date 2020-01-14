@@ -20,7 +20,7 @@ class imageredirect_info
 		return array(
 			'filename'	=> 'v12mike/imageredirect/acp/imageredirect_module',
 			'title'		=> 'Image Redirect',
-			'version'	=> '2.0.1-b3',
+			'version'	=> '2.0.1-b4',
 			'modes'		=> array(
 				'local_image_store'	=> array(
 					'title' => 'IR_LOCAL_STORE_CONFIG',

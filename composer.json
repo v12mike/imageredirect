@@ -3,8 +3,8 @@
 	"type": "phpbb-extension",
 	"description": "Rewrites extenal image URLs to point to a local file or proxy server.",
 	"homepage": "https://www.phpbb.com/community/viewtopic.php?f=456&t=2487136",
-	"version": "2.0.1-b3",
-	"time": "2020-01-14 12:00:00",
+	"version": "2.0.1-b4",
+	"time": "2020-01-15 12:00:00",
 	"license": "GPL-2.0-only",
 	"authors": [
 		{
