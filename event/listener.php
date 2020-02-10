@@ -60,15 +60,15 @@ class listener implements EventSubscriberInterface
 					$url = $board_url . '/' . $local_file_name . $file_ext;
 					return $url;
 				}
+			   	// fallback to file without extension (for backward compatibility)
+				elseif (file_exists($file_path))
+				{
+					// we will link to the local file
+					$url = $board_url . '/' . $local_file_name;
+					return $url;
+				}
+				// drop through to proxy mode
 			}
-            // fallback to file without extension (for backward compatibility)
-			elseif (file_exists($file_path))
-			{
-				// we will link to the local file
-				$url = $board_url . '/' . $local_file_name;
-				return $url;
-			}
-			// drop through to proxy mode
 		}
 
 		// skip unless proxy mode enabled
