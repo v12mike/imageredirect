@@ -71,28 +71,23 @@ class listener implements EventSubscriberInterface
 			}
 		}
 
-		// skip unless proxy mode enabled
-		if ($this->config['imageredirect_proxymode'] > 0)
+		// skip unless proxy mode enabled & if the url protocol is http:// (not https:// )
+		if (($this->config['imageredirect_proxymode'] > 0) && (strpos($url, 'http://') == 0)
 		{
-			// only redirect to proxy if the protocol is http:// (not https:// )
-			if (strpos($url, 'http://') === 0)
+			if (strpos($url, 'http://' . $this->config['server_name']) == 0)
 			{
-				// if the image is hosted on this server, assume that the url is valid and just update the protocol
-				if (strpos($url, 'http://' . $this->config['server_name']) === 0)
-				{
-					$url = preg_replace('#http://#', 'https://', $url);
-					return $url;
-				}
-
-				// rewite urls for  "simple mode" proxy (if so configured)
-				if ($this->config['imageredirect_proxysimplemode'])
-				{
-					// the substr($url, 7) trims the leading http:// from the url
-					$url = 'https://' . $this->config['imageredirect_proxyaddress'] . substr($url, 7) . $this->config['imageredirect_proxyapikey'];
-					return $url;
-				}
-
-				// if all else fails... rewrite url for Camo proxy server
+				// the image is hosted on this domain, assume that the location is valid and just update the protocol
+				$url = preg_replace('#http://#', 'https://', $url);
+			}
+			elseif ($this->config['imageredirect_proxysimplemode'] > 0)
+			{
+				// rewite the url for  "simple mode" proxy
+				// the substr($url, 7) trims the leading http:// from the url
+				$url = 'https://' . $this->config['imageredirect_proxyaddress'] . substr($url, 7) . $this->config['imageredirect_proxyapikey'];
+			}
+			else
+			{
+				// rewrite url to use the Camo proxy server
 				$digest = hash_hmac('sha1', $url, $this->config['imageredirect_proxyapikey']);
 				$url = 'https://' . $this->config['imageredirect_proxyaddress'] . '/' . $digest . '/' . bin2hex($url);
 			}
