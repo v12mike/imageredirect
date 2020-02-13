@@ -72,7 +72,7 @@ class listener implements EventSubscriberInterface
 		}
 
 		// skip unless proxy mode enabled & if the url protocol is http:// (not https:// )
-		if (($this->config['imageredirect_proxymode'] > 0) && (strpos($url, 'http://') == 0)
+		if (($this->config['imageredirect_proxymode'] > 0) && (strpos($url, 'http://') == 0))
 		{
 			if (strpos($url, 'http://' . $this->config['server_name']) == 0)
 			{
